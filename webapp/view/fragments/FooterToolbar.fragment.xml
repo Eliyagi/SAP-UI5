@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core">
+	<Toolbar xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" class="footerStyle" width="100%">
+		<Button xmlns="sap.m" text="אישור תשלומים " class="buttonFooter" width="100%" icon="sap-icon://accept" press="onSendPayments"/>
+		<HBox width="100%" alignItems="End">
+			<items>
+				<Label class="whiteLabel" text="ILS" width="100%"/>
+				<HBox xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="0.5em"
+					direction="Column" id="vbox0"/>
+				<Title xmlns="sap.m" text="{path:'System>/sumAmount', type:'sap.ui.model.odata.type.Decimal', constraints:{scale:2}}" visible="{= ${System>/sumAmount} !== '0' }" titleStyle="H3" id="sumAmount"/>
+				<Title xmlns="sap.m" text="0" visible="{= ${System>/sumAmount} === '0' }" titleStyle="H3"/>
+			</items>
+		</HBox>
+		<content/>
+	</Toolbar>
+</core:FragmentDefinition>

@@ -1,0 +1,58 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<Dialog contentWidth="1000px">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<HBox width="100%">
+					    <items>
+					        <core:Icon src="sap-icon://message-warning" size="1.5em"/>
+					        <FlexBox width="1em"/>
+					        <Title text="דחיית ריצת תשלום" titleStyle="H1"/>
+					    </items>
+					</HBox>
+				</contentMiddle>
+			<contentRight>
+			    <Button icon="sap-icon://decline" press="onCloseSubmit"/>
+			</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<l:Grid position="Center" defaultIndent="XL2 L2 M1 S0" defaultSpan="XL10 L10 M12 S12">
+				<l:content>
+					<VBox width="100%" direction="Column">
+						<items>
+							<HBox width="100%">
+								<items>
+									<VBox width="100%" direction="Column">
+										<items>
+											<Label class="cardLabels" text="סכום לאישור" width="100%"/>
+											<HBox xmlns:core="sap.ui.core" width="100%" alignItems="Center">
+												<items>
+													<Label text="{rejectBoxModel>/Currency}" width="100%"/>
+													<HBox width="0.25em" direction="Column"/>
+													<Title text="{path:'rejectBoxModel>/Amount', type:'sap.ui.model.odata.type.Decimal', constraints:{scale:2}}" titleStyle="H1"/>
+												</items>
+											</HBox>
+										</items>
+									</VBox>
+									<VBox width="100%" direction="Column" alignItems="End">
+										<items>
+											<Title class="sapUiTinyMargin" text="{path: 'rejectBoxModel>/PaymentDate', type: 'sap.ui.model.type.Date',formatOptions: {pattern: 'dd.MM.yyyy'}}"/>
+										</items>
+									</VBox>
+								</items>
+							</HBox>
+							<Label text="סיבת דחייה" width="100%" class="cardLabels"/>
+							<TextArea rows="3"  value="{path:'rejectBoxModel>/ApproveMessage'}" width="100%" placeholder="שדה חובה " />
+							<HBox width="100%" justifyContent="End">
+								<items>
+									<Button class="buttonStyle" text="דחה" data:id="{rejectBoxModel>/id}" data:ApproveMessage="{rejectBoxModel>/ApproveMessage}" icon="sap-icon://decline" press="onSendReject" enabled="{= ${rejectBoxModel>/ApproveMessage} !== ''}"/>
+								</items>
+							</HBox>
+						</items>
+					</VBox>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

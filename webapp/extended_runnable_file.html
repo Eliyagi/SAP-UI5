@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>FinalProject</title>
+		<script id="sap-ui-bootstrap" src="resources/sap-ui-core.js" data-sap-ui-theme="sap_belize" data-sap-ui-resourceroots="{&quot;demo.FinalProject&quot;: &quot;./&quot;}" data-sap-ui-compatversion="edge" data-sap-ui-preload="async" data-sap-ui-libs="sap.m">
+		</script>
+	
+<script>
+var bRunWithMock = true;
+var sRunWithMock = jQuery.sap.getUriParameters().get('run-with-mock');
+if (sRunWithMock === 'false') {
+bRunWithMock = false;
+}
+if (bRunWithMock) {
+jQuery.sap.require('sap.ui.core.util.MockServer');
+var uri = '/sap/opu/odata/sap/ZFI_PAYMENTS_SRV/';
+var oMock = new sap.ui.core.util.MockServer({rootUri : uri});
+var _sAppModulePath = "demo.FinalProject/";
+var sMetadataPath = "localService/metadata.xml";
+var sMetadataUrl = jQuery.sap.getModulePath(_sAppModulePath) + "/" + sMetadataPath;
+oMock.simulate(sMetadataUrl);
+oMock.start();
+	sap.ui.getCore().attachInit(function () {
+		console.log('Running in demo mode with mock data.');
+	});
+}
+</script>
+
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "demo.FinalProject"
+					})
+				}).placeAt("content");
+			});
+		</script>
+	</head>
+	<body class="sapUiBody" id="content">
+	</body>
+</html>

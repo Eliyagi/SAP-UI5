@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Toolbar class="headerToolbar" width="100%">
+		<HBox width="100%" id="hbox0">
+			<items>
+				<HBox width="100%" id="employeeBox" alignItems="Center" height="50%">
+					<items>
+						<FlexBox width="15px"/>
+						<Image src="{Photo}" height="2.5em" id="image1"/>
+						<FlexBox width="10px"/>
+						<VBox width="100%" direction="Column" id="vbox1">
+							<items>
+								<Title text="{Name}" id="title0" />
+								<Text class="whiteLabel" text="{Role}" id="text2"/>
+							</items>
+						</VBox>
+					</items>
+				</HBox>
+				<HBox width="100%" id="hbox1_copy" alignItems="Center" justifyContent="End">
+					<items>
+						<Image src="css/images/image.png" height="1.5em"/>
+						<FlexBox width="15px"/>
+					</items>
+				</HBox>
+			</items>
+		</HBox>
+	</Toolbar>
+</core:FragmentDefinition>

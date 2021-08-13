@@ -1,0 +1,7 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="demo.FinalProject.controller.ErrorPage">
+	<MessagePage
+	text="{i18n>NotFound.text}" 
+	description="{i18n>NotFound.des}"
+	showNavButton = "true"
+	navButtonPress= "onNavButtonPress"/>
+</mvc:View>

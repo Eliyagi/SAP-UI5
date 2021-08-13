@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<HBox width="100%" id="filterBox">
+				<items>
+					<HBox width="70%" id="hbox7" class="pickAllBox">
+						<CheckBox id="pickAll" select="onpickAllCards"/>
+						<VBox width="100%" direction="Column" justifyContent="Center">
+							<items>
+								<Title class="checkBoxText" text="בחר הכל"/>
+							</items>
+						</VBox>
+						<items/>
+					</HBox>
+					<HBox class="sumPickBox" width="15%">
+						<VBox alignItems="Center" width="100%">
+							<items>
+								<Label class="whiteLabel" text="סה&quot;כ" width="100%"/>
+								<Text class="sumPickBoxText" text="{System>/allCards}" id="allCards"/>
+							</items>
+						</VBox>
+					</HBox>
+					<HBox class="sumPickBox" width="15%">
+						<VBox alignItems="Center" width="100%">
+							<items>
+								<Label class="whiteLabel" text="נבחרו" width="100%" id="chosen"/>
+								<Text class="sumPickBoxText" text="{System>/chosen}"/>
+							</items>
+						</VBox>
+					</HBox>
+				</items>
+			</HBox>
+</core:FragmentDefinition>

@@ -1,0 +1,149 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "demo.FinalProject",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZFI_PAYMENTS_SRV": {
+				"uri": "/sap/opu/odata/sap/ZFI_PAYMENTS_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_belize"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "demo.FinalProject.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "demo.FinalProject.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "None",
+					"useBatch": true
+				},
+				"dataSource": "ZFI_PAYMENTS_SRV",
+				"preload": true
+			},
+			"System": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false
+			},
+			"rejectBoxModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "demo.FinalProject.view",
+				"controlAggregation": "pages",
+				"controlId": "idAppControl",
+				"clearControlAggregation": false,
+				"bypassed": {
+					"target": ["ErrorPage"]
+				}
+			},
+			"routes": [{
+				"name": "Main",
+				"pattern": "",
+				"target": ["Main"]
+			}, {
+				"name": "NoPayments",
+				"pattern": "NoPayments",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["NoPayments"]
+			}, {
+				"name": "ErrorPage",
+				"pattern": "Error",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["ErrorPage"]
+			}],
+			"targets": {
+				"TargetApp": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "App"
+				},
+				"Main": {
+					"viewType": "XML",
+					"viewName": "Main",
+					"viewLevel": 1
+				},
+				"NoPayments": {
+					"viewType": "XML",
+					"viewName": "NoPayments",
+					"viewLevel": 2
+				},
+				"ErrorPage": {
+					"viewType": "XML",
+					"viewName": "ErrorPage",
+					"viewLevel": 1
+				}
+			}
+		}
+	}
+}

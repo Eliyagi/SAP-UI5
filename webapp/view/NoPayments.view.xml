@@ -1,0 +1,20 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="demo.FinalProject.controller.NoPayments">
+	<Page title="Title">
+		<customHeader>
+			<core:Fragment xmlns:core="sap.ui.core" fragmentName="demo.FinalProject.view.fragments.Header" type="XML"/>
+		</customHeader>
+		<subHeader>
+			<core:Fragment xmlns:core="sap.ui.core" fragmentName="demo.FinalProject.view.fragments.subHeader" type="XML"/>
+		</subHeader>
+		<content>
+			<VBox width="100%" direction="Column" id="vbox0" height="100%" justifyContent="Center" alignItems="Center">
+			    <items>
+			        <core:Icon xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:core="sap.ui.core" src="sap-icon://complete" size="4em" id="icon1" color="#003F80"/>
+			        <Title xmlns="sap.m" text="אין תשלומים לאישור" id="title1" titleStyle="H1"/>
+			    </items>
+			</VBox>
+			<!--<MessagePage showHeader="false" text="אין תשלומים לאישור" description="" icon="sap-icon://complete"></MessagePage>-->
+		</content>
+	</Page>
+</mvc:View>

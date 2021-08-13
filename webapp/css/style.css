@@ -1,0 +1,154 @@
+/* header Toolbar */
+	.headerToolbar.sapMIBar.sapMHeader-CTX {
+		background-color: #003F80;
+	}
+	.sapMIBar-CTX .sapMTitle{
+		color:white;
+	}
+	.whiteLabel{
+		color:white;
+		opacity: 0.6;
+		font-size:0.85em;
+	}
+	.sapMTitle{
+		line-height: 100%;
+	}
+
+/* sub Header */
+	.sapMIBar.sapMSubHeader-CTX {
+	    color: white;
+	}
+	.subHeader.sapMIBar.sapMSubHeader-CTX {
+		background-color: #006CB2;
+	}
+
+/* filter box*/
+	.pickAllBox.sapMFlexBoxBGTransparent{
+		background-color: #022447;
+	}
+	.pickAllBox{
+		border : solid 1px gray;
+	}
+	.sumPickBox.sapMFlexBoxBGTransparent {
+	    background-color: #003F80;
+	}
+	.sumPickBox {
+	    border : solid 1px gray;
+	}
+	.sumPickBoxText  {
+	    color: white;
+	}
+	
+
+
+/*default check box*/
+	.sapMCbBg {
+	    border: solid 0.09em white;
+	    background-color: transparent;
+	    border-radius: 50%;
+	}
+	.sapMCbBg.sapMCbMarkChecked:before {
+	    color: white;
+	    font-size: 0.60em;
+	    position: absolute;
+	}
+	.checkBoxText.sapMTitle{
+		color: white;
+	}
+
+/*Button Style*/
+	.buttonStyle .sapMBtnInner{
+		border: none;
+		background: #c7c7c7f2;
+		border-bottom: 3px solid #C80B0B;
+		border-radius: 0;
+	}
+	.buttonStyle .sapMBtnInner, .sapMBtnIcon{
+		color: #262626;
+		font-size: 1.25em;
+	}
+
+/* CARDS payment */
+	.cards{
+		background: gray;
+	}
+	.card {
+		border: solid 0.09em gray;
+		margin: 0.1em 0.09em 0.1em 0em;
+	}
+	.paymentHeader {
+	    background-color: #003F80;
+	}
+	.paymentBox{
+		height: 16em;
+		background-color: white;
+	}
+	.paymentBox .sapMLabel{
+		color:#003F80;
+	}
+	.boldText{
+		font-weight: bold;
+	}
+	.currencyStyle{
+		font-size:0.85em;
+	}
+	.currencyStyle2 {
+	    font-size: 0.65em;
+	}
+
+
+/*card after pick*/
+	.paymentBoxPicked{
+		background-color: #006CB2;
+	}
+	.paymentBoxPicked .sapMTitle{
+		color: white;
+		text-shadow: none;
+	}
+	.paymentBoxPicked .sapMLabel{
+		color:white;
+		opacity: 0.6;
+		font-size:0.85em;
+	}
+	.paymentBoxPicked .sapMBtnInner{
+		background-color: white;
+	}
+	
+/*card after sent*/
+	.paymentHeaderSent  {
+	    display: none;
+	}
+	.paymentBoxPickedSent {
+		background-color: #003F80;
+	}
+	.paymentBoxPickedSent .sapMBtnInner{
+		display: none;
+	}
+	.paymentBoxPickedSent .sapMTitle{
+		color: white;
+		text-shadow: none;
+	}
+	.paymentBoxPickedSent .sapMLabel{
+		color:white;
+		opacity: 0.6;
+		font-size:0.85em;
+	}
+	
+	
+/*footer style*/
+.footerStyle.sapContrast.sapMIBar-CTX.sapMFooter-CTX{
+	background-color: #003F80;
+}
+.buttonFooter.sapContrast.sapMBtnInner, .sapContrast .sapMBtnInner, .sapContrast.sapMFooter-CTX .sapMBtnInner, .sapContrast .sapMFooter-CTX .sapMBtnInner{
+    color: #003F80;
+    text-shadow:none;
+    background-color: white;
+	border: 3px solid #006CB2;
+	border-radius: 0;
+}
+
+.buttonFooter.sapContrast.sapMBtnIcon, .sapContrast .sapMBtnIcon{
+	color: #003F80;
+    text-shadow:none;
+}
+

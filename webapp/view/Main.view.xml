@@ -1,0 +1,97 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="demo.FinalProject.controller.Main">
+	<Page title="Title">
+		<customHeader>
+			<core:Fragment xmlns:core="sap.ui.core" fragmentName="demo.FinalProject.view.fragments.Header" type="XML"/>
+		</customHeader>
+		<subHeader>
+			<core:Fragment xmlns:core="sap.ui.core" fragmentName="demo.FinalProject.view.fragments.subHeader" type="XML"/>
+		</subHeader>
+		<footer>
+			<core:Fragment xmlns:core="sap.ui.core" fragmentName="demo.FinalProject.view.fragments.FooterToolbar" type="XML"/>
+		</footer>
+		<content >
+			<core:Fragment xmlns:core="sap.ui.core" fragmentName="demo.FinalProject.view.fragments.filterBox" type="XML"/>
+			<VBox width="100%" direction="Column" id="cards" class="cards" items="{/Payments}">
+				<items>
+					<VBox id="card" class="card " visible="{= (${Status} === 2)}" data:id="{Id}" data:Status="{Status}">
+															<!--//  2!!-->
+						<HBox class="paymentHeader" width="100%" id="cardHeader">
+							<items>
+								<HBox width="80%">
+									<CheckBox data:id="{Id}" data:amount="{Amount}" select="onSelectCard" id="pick"/>
+									<VBox width="100%" direction="Column" justifyContent="Center">
+										<items>
+											<Title class="checkBoxText" text="בחר ריצת תשלום"/>
+										</items>
+									</VBox>
+								</HBox>
+								<VBox width="20%" direction="Column" id="vbox6" alignItems="End">
+									<items>
+										<Label class="whiteLabel sapUiTinyMargin" text="{Id}" width="100%" id="label9"/>
+									</items>
+								</VBox>
+							</items>
+						</HBox>
+						<HBox width="100%" class="paymentBox " id="cardDetails">
+							<items>
+								<VBox width="100%" direction="Column" class="sapUiSmallMargin" id="vbox3">
+									<items>
+										<VBox>
+											<Label class="a" text="סכום לאישור" width="100%"/>
+											<HBox width="100%" alignItems="End">
+												<items>
+													<Title text="{Currency}" class="currencyStyle" width="100%"/>
+													<!--<Title text="ILS" class="currencyStyle" width="100%"/>-->
+													<HBox width="0.25em" direction="Column"/>
+													<Title class="boldText" text="{path:'Amount', type:'sap.ui.model.odata.type.Decimal', constraints:{scale:2}}" titleStyle="H1"/>
+												</items>
+											</HBox>
+											<Label class="a" text="סכום מירבי" width="100%"/>
+											<HBox width="100%" alignItems="Baseline">
+												<items>
+													<Title text="{Currency}" class="currencyStyle2" width="100%"/>
+													<!--<Title text="ILS" class="currencyStyle2" width="100%"/>-->
+													<HBox width="0.25em" direction="Column"/>
+													<Title text="{path:'MaxPayment', type:'sap.ui.model.odata.type.Decimal', constraints:{scale:2} }"/>
+												</items>
+											</HBox>
+											<Label class="a" text="מהות" width="100%"/>
+											<HBox width="100%">
+												<items>
+													<Title xmlns="sap.m" text="{Description}"/>
+												</items>
+											</HBox>
+											<Label class="a" text="מאשר ראשון" width="100%"/>
+											<HBox width="100%">
+												<items>
+													<Title xmlns="sap.m" text="{FirstApprover}"/>
+												</items>
+											</HBox>
+											<Label class="a" text="סטטוס" width="100%"/>
+											<HBox width="100%">
+												<items>
+													<Title xmlns="sap.m" text="{= ${Status} === 2 ? 'ממתין לחותם שני' : ''}"/>
+													<!--//  2!!-->
+												</items>
+											</HBox>
+										</VBox>
+									</items>
+								</VBox>
+								<VBox width="100%" direction="Column" class="sapUiTinyMargin" id="vbox3_copy" alignItems="End">
+									<items>
+										<Title xmlns="sap.m" class="A" text="{path: 'PaymentDate', type: 'sap.ui.model.type.Date',formatOptions: {pattern: 'dd.MM.yyyy'}}"
+											id="title2"/>
+										<VBox direction="Column" id="vbox4" height="100%"/>
+										<Button data:id="{Id}" data:Currency="{Currency}" data:PaymentDate="{PaymentDate}" data:amount="{Amount}" text="דחייה" class="buttonStyle"
+											id="button0" icon="sap-icon://decline" press="onOpenSubmitDialog"/>
+									</items>
+								</VBox>
+							</items>
+						</HBox>
+					</VBox>
+				</items>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>
